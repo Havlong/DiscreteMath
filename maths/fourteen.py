@@ -12,7 +12,7 @@ def make_undirected(matrix):
 
 def graph_from_matrix(matrix, name, filename):
     graph = Graph(name='G' + name, filename=filename, format='svg',
-                  node_attr={'color': 'lightblue2', 'style': 'filled'})
+                  node_attr={'shape': 'circle', 'color': 'lightblue2', 'style': 'filled'})
     for i in range(len(matrix)):
         graph.node(str(i + 1))
     for i in range(len(matrix)):
