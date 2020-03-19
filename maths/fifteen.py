@@ -1,3 +1,7 @@
+from maths.fourteen import graph_from_matrix
+from maths.fourteen import make_undirected
+
+
 def dfs(x, visited_vertices, component, graph):
     for i in range(len(visited_vertices)):
         if graph[x][i] == 1 and not visited_vertices[i]:
@@ -40,11 +44,12 @@ def is_gamilton(graph_to_check):
 
 if __name__ == '__main__':
     n = 7
-    input_graph = list(map(lambda element: list(map(int, input().split())), range(n)))
+    input_graph = make_undirected(list(map(lambda element: list(map(int, input().split())), range(n))))
+    graph_from_matrix(input_graph, 'Входной граф', 'input15')
     components = []
     visited = [False for i in range(n)]
     for i in range(n):
-        if visited[i] == -1:
+        if not visited[i]:
             components.append([])
             dfs(i, visited, components[-1], input_graph)
     if len(components) == 1:
@@ -54,8 +59,8 @@ if __name__ == '__main__':
             for v in i:
                 edges_count += v
         print("Граф является деревом" if edges_count == n - 1 else "Граф не является деревом")
-        print("Граф является Эйлеровым" if edges_count == n - 1 else "Граф не является Эйлеровым")
-        print("Граф является Гамильтоновым" if edges_count == n - 1 else "Граф не является Гамильтоновым")
+        print("Граф является Эйлеровым" if is_euler(input_graph) else "Граф не является Эйлеровым")
+        print("Граф является Гамильтоновым" if is_gamilton(input_graph) else "Граф не является Гамильтоновым")
     else:
         print("Граф несвязный")
         print("Всего компонент:", len(components))
