@@ -47,7 +47,7 @@ if __name__ == '__main__':
         for i in input_graph:
             for v in i:
                 edges_count += v
-        print("Граф является деревом" if edges_count == n - 1 else "Граф не является деревом")
+        print("Граф является деревом" if edges_count == 2 * n - 2 else "Граф не является деревом")
         print("Граф является Эйлеровым" if is_euler(input_graph) else "Граф не является Эйлеровым")
         print("Граф является Гамильтоновым по условию Оре" if is_gamilton(
             input_graph) else "Граф не является Гамильтоновым по условию Оре")
