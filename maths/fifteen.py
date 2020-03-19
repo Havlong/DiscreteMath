@@ -12,11 +12,7 @@ def dfs(x, visited_vertices, component, graph):
 
 def is_euler(graph_to_check):
     for i in range(len(graph_to_check)):
-        count = 0
-        for j in range(len(graph_to_check)):
-            count += graph_to_check[i][j]
-            if i == j:
-                count += 1
+        count = sum(graph_to_check[i]) + graph_to_check[i][i]
         if count % 2 != 0:
             return False
     return True
@@ -26,17 +22,10 @@ def is_gamilton(graph_to_check):
     if len(graph_to_check) < 3:
         return True
     for i in range(len(graph_to_check)):
-        for j in range(len(graph_to_check)):
-            if i != j:
-                count_a = 0
-                count_b = 0
-                for x in range(len(graph_to_check)):
-                    count_a += graph_to_check[i][x]
-                    count_b += graph_to_check[j][x]
-                    if i == x:
-                        count_a += 1
-                    if j == x:
-                        count_b += 1
+        for j in range(i):
+            if not graph_to_check[i][j]:
+                count_a = sum(graph_to_check[i]) - graph_to_check[i][i]
+                count_b = sum(graph_to_check[j]) - graph_to_check[j][j]
                 if count_a + count_b < len(graph_to_check):
                     return False
     return True
@@ -60,7 +49,8 @@ if __name__ == '__main__':
                 edges_count += v
         print("Граф является деревом" if edges_count == n - 1 else "Граф не является деревом")
         print("Граф является Эйлеровым" if is_euler(input_graph) else "Граф не является Эйлеровым")
-        print("Граф является Гамильтоновым" if is_gamilton(input_graph) else "Граф не является Гамильтоновым")
+        print("Граф является Гамильтоновым по условию Оре" if is_gamilton(
+            input_graph) else "Граф не является Гамильтоновым по условию Оре")
     else:
         print("Граф несвязный")
         print("Всего компонент:", len(components))
