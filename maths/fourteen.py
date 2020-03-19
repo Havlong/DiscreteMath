@@ -6,7 +6,8 @@ from graphviz import Graph
 def make_undirected(matrix):
     for i in range(len(matrix)):
         for j in range(i):
-            matrix[j][i] = matrix[i][j]
+            matrix[j][i] = max(matrix[i][j], matrix[j][i])
+            matrix[i][j] = matrix[j][i]
     return matrix
 
 
