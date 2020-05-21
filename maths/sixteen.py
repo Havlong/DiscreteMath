@@ -6,6 +6,7 @@ INF = 2000000000000000000
 def dijkstra(s, distance, graph):
     my_n = len(graph)
     visited = [False for i in range(my_n)]
+    distance[s] = 0
     for times in range(my_n):
         v_from = -1
         for v_new in range(my_n):
@@ -28,5 +29,5 @@ if __name__ == '__main__':
     graph_from_matrix(input_graph, 'Входной граф', 'input15')
     way = [INF for i in range(n)]
     dijkstra(start, way, input_graph)
-    print(*range(n))
+    print(*range(1, n + 1))
     print(*way)
