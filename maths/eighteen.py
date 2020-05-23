@@ -52,4 +52,32 @@ graph G {
     6 -- 7
     7 -- 8
 }
+
+0 1 1 0 1 1 0 0
+0 0 0 1 0 0 0 0
+0 0 0 1 0 0 0 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 1 0
+0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0
+graph G {
+    node[style=filled]
+    1[color=red]
+    2[color=green]
+    3[color=green]
+    4[color=red]
+    5[color=green]
+    6[color=green]
+    7[color=red]
+    8[color=green]
+    1 -- 2
+    1 -- 3
+    1 -- 5
+    1 -- 6
+    2 -- 4
+    3 -- 4
+    5 -- 7
+    7 -- 8
+}
 """
