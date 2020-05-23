@@ -26,7 +26,7 @@ if __name__ == '__main__':
     n = 7
     input_graph = make_undirected(list(map(lambda element: list(map(int, input().split())), range(n))))
     start = int(input())
-    graph_from_matrix(input_graph, 'Входной граф', 'input15')
+    graph_from_matrix(input_graph, 'Входной граф', 'input17')
 
     print("Полученный по методу Крускала граф:")
     print(*kruskal(input_graph))
