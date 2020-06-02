@@ -1,4 +1,4 @@
-from maths.fourteen import make_undirected, graph_from_matrix
+from maths.lab14 import make_undirected, graph_from_matrix
 
 INF = 2000000000000000000
 

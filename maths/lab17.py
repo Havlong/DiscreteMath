@@ -1,4 +1,4 @@
-from maths.fourteen import make_undirected, graph_from_matrix
+from maths.lab14 import make_undirected, graph_from_matrix
 
 
 def kruskal(graph):

@@ -1,4 +1,4 @@
-from maths.fourteen import make_undirected
+from maths.lab14 import make_undirected
 
 
 def paint(graph, color, graph_size, cur):
