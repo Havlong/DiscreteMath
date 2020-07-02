@@ -1,5 +1,5 @@
-from maths.first import random_set
-from maths.second import intersect
+from maths.lab1 import random_set
+from maths.lab2 import intersect
 
 
 def get_all_subsets(full_set):

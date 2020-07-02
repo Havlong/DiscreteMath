@@ -1,5 +1,5 @@
-from maths.fourteen import graph_from_matrix
-from maths.fourteen import make_undirected
+from maths.lab14 import graph_from_matrix
+from maths.lab14 import make_undirected
 
 
 def dfs(x, visited_vertices, component, graph):

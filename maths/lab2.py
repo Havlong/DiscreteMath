@@ -1,5 +1,6 @@
-from maths.first import random_set
 import pylab
+
+from maths.lab1 import random_set
 
 
 def intersect(a, b):

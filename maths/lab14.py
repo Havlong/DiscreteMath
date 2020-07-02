@@ -24,7 +24,9 @@ def graph_from_matrix(matrix, name, filename):
     graph.view(cleanup=True)
 
 
-def unite_graphs(a, b):
+def unite_graphs(my_a, my_b):
+    a = my_a.copy()
+    b = my_b.copy()
     if len(a) < len(b):
         (a, b) = (b, a)
     answer = a
@@ -34,7 +36,9 @@ def unite_graphs(a, b):
     return answer
 
 
-def intersect_graphs(a, b):
+def intersect_graphs(my_a, my_b):
+    a = my_a.copy()
+    b = my_b.copy()
     if len(a) < len(b):
         (a, b) = (b, a)
     answer = b
