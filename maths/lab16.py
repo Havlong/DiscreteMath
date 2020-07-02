@@ -19,7 +19,7 @@ def dijkstra(s, distance, graph):
         for v_to in range(my_n):
             d = graph[v_from][v_to]
             if d != 0 and distance[v_from] + d < distance[v_to]:
-                d[v_to] = distance[v_from] + d
+                distance[v_to] = distance[v_from] + d
 
 
 if __name__ == '__main__':
@@ -31,3 +31,13 @@ if __name__ == '__main__':
     dijkstra(start, way, input_graph)
     print(*range(1, n + 1))
     print(*way)
+
+"""
+0 1  1  0 4  0 3
+1 0  0  0 89 0 1
+1 0  0  9 0  0 10
+0 0  9  0 0  0 2
+4 89 0  0 0  1 1
+0 0  0  0 1  0 3
+3 1  10 2 1  3 0
+"""

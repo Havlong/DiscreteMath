@@ -18,8 +18,8 @@ def graph_from_matrix(matrix, name, filename):
         graph.node(str(i + 1))
     for i in range(len(matrix)):
         for j in range(i):
-            if matrix[i][j] == 1 and i != j:
-                graph.edge(str(i + 1), str(j + 1))
+            if matrix[i][j] > 0 and i != j:
+                graph.edge(str(i + 1), str(j + 1), label=str(matrix[i][j]))
     graph.attr('graph', label=name, labelloc='t')
     graph.view(cleanup=True)
 
