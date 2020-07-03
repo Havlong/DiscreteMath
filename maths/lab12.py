@@ -1,4 +1,4 @@
-from math import factorial
+from scipy.special import comb
 
 
 def range_sum(n):
@@ -7,9 +7,9 @@ def range_sum(n):
 
 def factorial_sum(n):
     return sum(
-        map(lambda k: (-1 if k % 2 == 0 else 1) * factorial(n) / factorial(k) / factorial(n - k) / k, range(1, n + 1)))
+        map(lambda k: (-1 if k % 2 == 0 else 1) * comb(n, k) / k, range(1, n + 1)))
 
 
 if __name__ == '__main__':
     for i in [10, 25, 50]:
-        print("n = {} {} == {}".format(i, range_sum(i), factorial_sum(i)))
+        print("n = {} {} == {}".format(i, '%.6f' % range_sum(i), '%.6f' % factorial_sum(i)))
